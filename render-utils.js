@@ -31,3 +31,11 @@ export function renderButton(item) {
 
     return deleteDiv;
 }
+
+export function renderFullItem(item) {
+    const fullDiv = document.createElement('div');
+
+    fullDiv.append(renderItem(item), renderButton(item));
+
+    return fullDiv;
+}

@@ -8,7 +8,7 @@ import {
     unbuyItem,
     deleteSingleItem,
 } from '../fetch-utils.js';
-import { renderItem, renderButton } from '../render-utils.js';
+import { renderItem, renderButton,} from '../render-utils.js';
 
 checkAuth();
 
@@ -72,7 +72,14 @@ async function displayShoppingListItems() {
             displayShoppingListItems();
         });
         // append loop el to list el
-        listEl.append(listItemsAndQuantityEl, deleteButtonEl);
+
+        const allTogetherEl = document.createElement('div');
+        
+        allTogetherEl.classList.add('item-container');
+
+        allTogetherEl.append(listItemsAndQuantityEl, deleteButtonEl);
+
+        listEl.append(allTogetherEl);
 
     }
 }

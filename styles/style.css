@@ -118,6 +118,27 @@ form button {
     padding: 0;
 }
 
+.bought-button {
+    opacity: 30%;
+}
+
+.delete-item button {
+    color: var(--list);
+    background-color: white;
+    border: solid 1px var(--title);
+    cursor: pointer;
+    padding: .38rem;
+    font-size: .7rem;
+    text-transform: uppercase; 
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
 @media only screen and (min-width: 600px) {
     .top {
         display: inline-flex;
