@@ -12,7 +12,7 @@ export function renderItem(item) {
     itemP.textContent = item.item;
     quantityP.textContent = item.quantity;
 
-    listDiv.append(itemP, quantityP);
+    listDiv.append(quantityP, itemP);
 
     return listDiv;
 }

@@ -136,4 +136,6 @@ footer {
 
 .list {
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
 }
