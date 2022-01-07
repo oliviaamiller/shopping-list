@@ -15,7 +15,6 @@ const deleteButtonEl = document.querySelector('#delete-button');
 const listEl = document.querySelector('.list-items');
 const logoutButtonEl = document.querySelector('#logout-button');
 
-console.log(logoutButtonEl);
 
 window.addEventListener('load', () => {
     displayShoppingListItems();
@@ -24,15 +23,20 @@ window.addEventListener('load', () => {
 formEl.addEventListener('submit', async(e) => {
     e.preventDefault();
 
+    //get access to form data
     const data = new FormData(formEl);
 
+    //grab data input by name
     const listItem = data.get('item');
     const itemQuantity = data.get('quantity');
 
+    //create item with data from form you want displayed
     await createItem(listItem, itemQuantity);
 
+    //reset the form
     formEl.reset();
 
+    // display in dom 
     displayShoppingListItems();
 });
 

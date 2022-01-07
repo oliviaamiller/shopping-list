@@ -3,7 +3,7 @@ export function renderItem(item) {
     const itemP = document.createElement('p');
     const quantityP = document.createElement('p');
 
-    if (item.complete === true) {
+    if (item.bought === true) {
         listDiv.classList.add('bought', 'list');
     } else {
         listDiv.classList.add('unbought', 'list');
