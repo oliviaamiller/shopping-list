@@ -10,7 +10,7 @@ export async function createItem(item, quantity) {
         .insert([{
             item: item,
             quantity: quantity,
-            complete: false
+            bought: false
         }])
         .single();
 
@@ -29,7 +29,7 @@ export async function getItems() {
     const response = await client
         .from('list')
         .select()
-        .order('complete');
+        .order('bought');
 
     return checkError(response);
 }
@@ -37,7 +37,7 @@ export async function getItems() {
 export async function buyItem(id) {
     const response = await client   
         .from('list')
-        .update({ complete: true })
+        .update({ bought: true })
         .match({ id: id });
 
     return checkError(response);
