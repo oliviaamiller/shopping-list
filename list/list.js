@@ -14,12 +14,7 @@ const deleteButtonEl = document.querySelector('#delete-button');
 const listEl = document.querySelector('#list-items');
 const logoutButtonEl = document.querySelector('#logout');
 
-window.addEventListener('load', async() => {
-    //fetch and display user's existing list items
-    // call supabase to fetch all shopping items for this user
-    await getItems();
-
-
+window.addEventListener('load', () => {
     displayShoppingListItems();
 });
 
@@ -52,6 +47,12 @@ async function displayShoppingListItems() {
 
 
 }
+
+deleteButtonEl.addEventListener('click', async() => {
+    await deleteAllItems();
+
+    displayShoppingListItems();
+});
 
 
 logoutButtonEl.addEventListener('click', () => {
