@@ -13,9 +13,9 @@ checkAuth();
 const formEl = document.querySelector('form');
 const deleteButtonEl = document.querySelector('#delete-button');
 const listEl = document.querySelector('.list-items');
-const logoutButtonEl = document.querySelector('#logout');
+const logoutButtonEl = document.querySelector('#logout-button');
 
-console.log(listEl);
+console.log(logoutButtonEl);
 
 window.addEventListener('load', () => {
     displayShoppingListItems();
