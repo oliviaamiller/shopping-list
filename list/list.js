@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
 formEl.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    const data = new FormData('list');
+    const data = new FormData(formEl);
 
     const listItem = data.get('item');
     const itemQuantity = data.get('quantity');
@@ -32,19 +32,27 @@ formEl.addEventListener('submit', async(e) => {
     formEl.reset();
 
     displayShoppingListItems();
-})
+});
 
 async function displayShoppingListItems() {
     
-    await getItems();
+    const lists = await getItems();
 
-    listEl.textContent = `${list.quantity} ${list.item}`;
+    listEl.textContent = '';
 
     for (let list of lists) {
         const listItemsAndQuantityEl = renderItem(list);
+
+        // add click event to loopEl, on click buy item and then display
+        listItemsAndQuantityEl.addEventListener('click', async() => {
+            await buyItem(list.id);
+
+            displayShoppingListItems();
+        });
+        // append loop el to list el
+        listEl.append(listItemsAndQuantityEl);
+
     }
-
-
 }
 
 deleteButtonEl.addEventListener('click', async() => {
