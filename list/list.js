@@ -9,8 +9,13 @@ import {
 
 checkAuth();
 
-const logoutButton = document.getElementById('logout');
+const formEl = document.querySelector('form');
+const deleteButtonEl = document.querySelector('#delete-button');
+const listEl = document.querySelector('#list-items');
+const logoutButtonEl = document.querySelector('#logout');
 
-logoutButton.addEventListener('click', () => {
+console.log(formEl, deleteButtonEl, listEl, logoutButtonEl);
+
+logoutButtonEl.addEventListener('click', () => {
     logout();
 });
