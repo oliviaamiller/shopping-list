@@ -12,8 +12,10 @@ checkAuth();
 
 const formEl = document.querySelector('form');
 const deleteButtonEl = document.querySelector('#delete-button');
-const listEl = document.querySelector('#list-items');
+const listEl = document.querySelector('.list-items');
 const logoutButtonEl = document.querySelector('#logout');
+
+console.log(listEl);
 
 window.addEventListener('load', () => {
     displayShoppingListItems();
@@ -40,12 +42,12 @@ async function displayShoppingListItems() {
 
     listEl.textContent = '';
 
-    for (let list of lists) {
-        const listItemsAndQuantityEl = renderItem(list);
+    for (let item of lists) {
+        const listItemsAndQuantityEl = renderItem(item);
 
         // add click event to loopEl, on click buy item and then display
         listItemsAndQuantityEl.addEventListener('click', async() => {
-            await buyItem(list.id);
+            await buyItem(item.id);
 
             displayShoppingListItems();
         });
