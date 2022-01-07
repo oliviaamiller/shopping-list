@@ -50,9 +50,9 @@ html, body {
     border: solid 1px var(--title);
     cursor: pointer;
     padding: .4rem;
-    font-size: .69rem;
+    font-size: .75rem;
     text-transform: uppercase; 
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 form button {
@@ -62,6 +62,7 @@ form button {
     cursor: pointer;
     padding: .4rem;
     text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
 }
 
 form {
@@ -75,30 +76,12 @@ form input {
 }
 
 input::placeholder {
-    color: var(--title)
+    color: var(--title);
+    font-family: 'Quicksand', sans-serif;
 }
 
 form button {
     margin: 2px;
-}
-
-.auth-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.auth-container {
-    margin: 10px;
-}
-
-.auth-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.auth-container button {
-    margin: 10px;
 }
 
 .bought {
@@ -113,7 +96,9 @@ form button {
     color: var(--list);
     padding: .5em;
     text-transform: capitalize;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+
 }
 
 .list-items {
@@ -134,6 +119,7 @@ form button {
     cursor: pointer;
     padding: .1rem .3rem .2rem .3rem;
     font-size: .7rem;
+    text-transform: uppercase;
 }
 
 .item-container {
