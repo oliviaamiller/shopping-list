@@ -1,114 +1,92 @@
-
-body {
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
-    
-    --header-height: 80px;
-    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
-    --footer-height: 25px;
-    
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+:root {
+    --line: rgb(42, 43, 131); 
+    --title: rgb(255, 185, 7);
+    --placeholder: rgba(26, 27, 84, 0.831);
+    --list: rgb(255, 77, 37);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
+* {
+    box-sizing: border-box;
 }
 
-section {
-    background-color: var(--color5);
-    width: 1000px;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
-}
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-}
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
-}
-
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
-header img {
-    height: var(--header-height);
-}
-
-p {
-    margin: var(--gutter);
-}
-  
-footer {
-    position: fixed;
+html, body {
     width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--line);
+    margin: 1em;
+    height: 100%;
+}
 
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
+.title {
+    color: var(--title);
+    font-size: 1.2rem;
+}
 
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
+.top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-  }
+#delete-button {
+    color: white;
+    background-color: var(--list);
+    border: none;
+    cursor: pointer;
+    padding: .45rem;
+    font-size: .7rem;
+    text-transform: uppercase;
+}
 
-#logout {
-    position: fixed;
-    right: 20px;
-    top: 90px;
+#logout-button {    
+    color: white;
+    background-color: var(--list);
+    border: none;
+    cursor: pointer;
+    padding: .45rem;
+    font-size: .7rem;
+    text-transform: uppercase;
+}
+
+form button {
+    color: white;
+    background-color: var(--title);
+    border: none;
+    cursor: pointer;
+    padding: .4rem;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin: 2px;
+    border: var(--line) 1px solid;
+}
+
+input::placeholder {
+    color: var(--placeholder)
+}
+
+form button {
+    margin: 2px;
 }
 
 .auth-main {
@@ -132,10 +110,19 @@ footer {
 
 .bought {
     text-decoration: line-through;
+    opacity: 30%;
 }
 
 .list {
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    color: var(--list);
+}
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
