@@ -5,9 +5,10 @@ import {
     deleteAllItems,
     getItems,
     buyItem,
-    unbuyItem
+    unbuyItem,
+    deleteSingleItem,
 } from '../fetch-utils.js';
-import { renderItem } from '../render-utils.js';
+import { renderItem, renderButton } from '../render-utils.js';
 
 checkAuth();
 
@@ -44,11 +45,13 @@ formEl.addEventListener('submit', async(e) => {
 async function displayShoppingListItems() {
     
     const lists = await getItems();
+    
 
     listEl.textContent = '';
 
     for (let item of lists) {
         const listItemsAndQuantityEl = renderItem(item);
+        const deleteButtonEl = renderButton(item);
 
         // add click event to loopEl, on click buy item and then display
         listItemsAndQuantityEl.addEventListener('click', async() => {
@@ -62,8 +65,14 @@ async function displayShoppingListItems() {
 
             displayShoppingListItems();
         });
+
+        deleteButtonEl.addEventListener('click', async() => {
+            await deleteSingleItem(item.id);
+
+            displayShoppingListItems();
+        });
         // append loop el to list el
-        listEl.append(listItemsAndQuantityEl);
+        listEl.append(listItemsAndQuantityEl, deleteButtonEl);
 
     }
 }

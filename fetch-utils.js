@@ -25,6 +25,15 @@ export async function deleteAllItems() {
     return checkError(response);
 }
 
+export async function deleteSingleItem(id) {
+    const response = await client   
+        .from('list')
+        .delete()
+        .match({ id: id });
+
+    return checkError(response);
+}
+
 export async function getItems() {
     const response = await client
         .from('list')

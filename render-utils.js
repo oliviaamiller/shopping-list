@@ -7,10 +7,27 @@ export function renderItem(item) {
     } else {
         listDiv.classList.add('unbought', 'list');
     }
-
+    
     listP.textContent = `${item.quantity} ${item.item}`;
 
     listDiv.append(listP);
 
     return listDiv;
+}
+
+export function renderButton(item) {
+    const deleteDiv = document.createElement('div');
+    const deleteButton = document.createElement('button');
+
+    if (item.bought === true) {
+        deleteDiv.classList.add('bought-button', 'delete-item');
+    } else {
+        deleteDiv.classList.add('unbought-button', 'delete-item');
+    }
+
+    deleteButton.textContent = 'delete';
+
+    deleteDiv.append(deleteButton);
+
+    return deleteDiv;
 }
