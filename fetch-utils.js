@@ -43,6 +43,15 @@ export async function buyItem(id) {
     return checkError(response);
 }
 
+export async function unbuyItem(id) {
+    const response = await client   
+        .from('list')
+        .update({ bought: false })
+        .match({ id: id });
+
+    return checkError(response);
+}
+
 export async function getUser() {
     return client.auth.session();
 }

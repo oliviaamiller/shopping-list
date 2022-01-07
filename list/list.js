@@ -5,6 +5,7 @@ import {
     deleteAllItems,
     getItems,
     buyItem,
+    unbuyItem
 } from '../fetch-utils.js';
 import { renderItem } from '../render-utils.js';
 
@@ -51,7 +52,13 @@ async function displayShoppingListItems() {
 
         // add click event to loopEl, on click buy item and then display
         listItemsAndQuantityEl.addEventListener('click', async() => {
-            await buyItem(item.id);
+
+            if (item.bought === false) {
+                await buyItem(item.id);
+            } else {
+                await unbuyItem(item.id);
+            }
+                       
 
             displayShoppingListItems();
         });
