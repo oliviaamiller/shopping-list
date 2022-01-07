@@ -2,6 +2,8 @@ import {
     checkAuth, 
     logout, 
     createItem,
+    deleteAllItems,
+    
 } from '../fetch-utils.js';
 
 checkAuth();
