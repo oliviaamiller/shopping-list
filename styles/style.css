@@ -27,7 +27,8 @@ html, body {
 
 .title {
     color: var(--line);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-family: 'Cedarville Cursive', cursive;
 }
 
 .top {
@@ -48,9 +49,10 @@ html, body {
     background-color: white;
     border: solid 1px var(--title);
     cursor: pointer;
-    padding: .38rem;
-    font-size: .7rem;
+    padding: .4rem;
+    font-size: .69rem;
     text-transform: uppercase; 
+    font-family: sans-serif;
 }
 
 form button {
@@ -109,6 +111,9 @@ form button {
     display: flex;
     flex-direction: row;
     color: var(--list);
+    padding: .5em;
+    text-transform: capitalize;
+    font-family: sans-serif;
 }
 
 .list-items {
@@ -127,9 +132,8 @@ form button {
     background-color: white;
     border: solid 1px var(--title);
     cursor: pointer;
-    padding: .38rem;
+    padding: .1rem .3rem .2rem .3rem;
     font-size: .7rem;
-    text-transform: uppercase; 
 }
 
 .item-container {
@@ -165,8 +169,5 @@ form button {
         padding: 0;
     }
 
-    .list {
-        padding: 1em;
-    }
     
   }

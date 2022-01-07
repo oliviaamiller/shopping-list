@@ -25,7 +25,7 @@ export function renderButton(item) {
         deleteDiv.classList.add('unbought-button', 'delete-item');
     }
 
-    deleteButton.textContent = 'delete';
+    deleteButton.textContent = 'x';
 
     deleteDiv.append(deleteButton);
 
