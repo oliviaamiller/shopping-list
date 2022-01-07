@@ -4,7 +4,7 @@ import {
     createItem,
     deleteAllItems,
     getItems,
-
+    buyItem,
 } from '../fetch-utils.js';
 
 checkAuth();
