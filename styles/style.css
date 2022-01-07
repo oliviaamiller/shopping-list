@@ -26,8 +26,8 @@ html, body {
 }
 
 .title {
-    color: var(--title);
-    font-size: 1.2rem;
+    color: var(--line);
+    font-size: 1.4rem;
 }
 
 .top {
@@ -42,17 +42,7 @@ html, body {
     align-items: center;
 }
 
-#delete-button {
-    color: white;
-    background-color: var(--list);
-    border: none;
-    cursor: pointer;
-    padding: .45rem;
-    font-size: .7rem;
-    text-transform: uppercase;
-}
-
-#logout-button {    
+.delete-logout button {
     color: white;
     background-color: var(--list);
     border: none;
@@ -78,11 +68,11 @@ form {
 
 form input {
     margin: 2px;
-    border: var(--line) 1px solid;
+    border: var(--title) 1px solid;
 }
 
 input::placeholder {
-    color: var(--placeholder)
+    color: var(--title)
 }
 
 form button {

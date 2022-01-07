@@ -1,7 +1,6 @@
 export function renderItem(item) {
     const listDiv = document.createElement('div');
-    const itemP = document.createElement('p');
-    const quantityP = document.createElement('p');
+    const listP = document.createElement('p');
 
     if (item.bought === true) {
         listDiv.classList.add('bought', 'list');
@@ -9,10 +8,9 @@ export function renderItem(item) {
         listDiv.classList.add('unbought', 'list');
     }
 
-    itemP.textContent = item.item;
-    quantityP.textContent = item.quantity;
+    listP.textContent = `${item.quantity} ${item.item}`;
 
-    listDiv.append(quantityP, itemP);
+    listDiv.append(listP);
 
     return listDiv;
 }
