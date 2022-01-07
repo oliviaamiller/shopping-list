@@ -118,7 +118,7 @@ form button {
     padding: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
     .top {
         display: inline-flex;
         flex-direction: row;
@@ -135,6 +135,17 @@ form button {
     .top-left {
         margin-top: 2rem;
         margin-right: 2rem;
+    }
+
+    .list-items {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .list {
+        padding: 1em;
     }
     
   }
