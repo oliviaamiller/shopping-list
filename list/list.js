@@ -3,7 +3,8 @@ import {
     logout, 
     createItem,
     deleteAllItems,
-    
+    getItems,
+
 } from '../fetch-utils.js';
 
 checkAuth();

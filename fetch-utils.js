@@ -13,7 +13,7 @@ export async function createItem(item, quantity) {
             complete: false
         }])
         .single();
-        
+
     return checkError(response);
 }
 
@@ -21,6 +21,15 @@ export async function deleteAllItems() {
     const response = await client   
         .from('list')
         .delete();
+
+    return checkError(response);
+}
+
+export async function getItems() {
+    const response = await client
+        .from('list')
+        .select()
+        .order('complete');
 
     return checkError(response);
 }
