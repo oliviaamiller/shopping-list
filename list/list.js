@@ -6,6 +6,7 @@ import {
     getItems,
     buyItem,
 } from '../fetch-utils.js';
+import { renderItem } from '../render-utils.js';
 
 checkAuth();
 
@@ -34,15 +35,13 @@ formEl.addEventListener('submit', async(e) => {
 })
 
 async function displayShoppingListItems() {
-    // fetches the items, clears out the list, and redisplays them
-    //loop through those items, create DOM elements, and append -- render items differently if "bought: true"
-
+    
     await getItems();
 
-    listEl.textContent = '';
+    listEl.textContent = `${list.quantity} ${list.item}`;
 
-    for (let item of items) {
-        const 
+    for (let list of lists) {
+        const listItemsAndQuantityEl = renderItem(list);
     }
 
 
