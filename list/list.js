@@ -8,7 +8,7 @@ import {
     unbuyItem,
     deleteSingleItem,
 } from '../fetch-utils.js';
-import { renderItem, renderButton,} from '../render-utils.js';
+import { renderItem, renderButton } from '../render-utils.js';
 
 checkAuth();
 
