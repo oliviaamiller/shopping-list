@@ -16,15 +16,16 @@ html, body {
     margin: 0;
 }
 
+h3 {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 2rem;
+    margin: 0;
+}
+
 
 #sign-in button {
     color: white;
     background-color: var(--line);
-    border: none;
-    cursor: pointer;
-    padding: .4rem;
-    text-transform: uppercase;
-    margin: 2px;
 }
 
 #sign-in input {
@@ -40,19 +41,10 @@ html, body {
     color: var(--line)
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
 
 #sign-up button {
     color: white;
     background-color: var(--list);
-    border: none;
-    cursor: pointer;
-    padding: .4rem;
-    text-transform: uppercase;
-    margin: 2px;
 }
 
 
@@ -64,10 +56,28 @@ form {
 
 #sign-up h3 {
     color: var(--list);
+    
 }
 
 #sign-up input::placeholder {
     color: var(--list)
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+    cursor: pointer;
+    padding: .4rem;
+    text-transform: uppercase;
+    margin: 2px;
 }
 
 .auth-main {
